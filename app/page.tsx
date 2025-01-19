@@ -12,6 +12,7 @@ export default function Home() {
     if (isLoading) {
       window.scrollTo(0, 0);
     } else {
+      window.scrollTo(0, 0);
       document.getElementById("text-loading")?.classList.add("loaded");
       document.getElementById("text-container")?.classList.add("loaded");
       document
