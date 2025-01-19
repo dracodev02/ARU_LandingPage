@@ -1,10 +1,10 @@
 "use client";
 import Marquee from "react-fast-marquee";
 import Image from "next/image";
-import arrowPixel from "@/assets/arrowpixel.svg";
-import characterMan from "@/assets/character-man.png";
-import characterWomen from "@/assets/character-women.png";
-import base from "@/assets/base.png";
+import arrowPixel from "@/public/assets/arrowpixel.svg";
+import characterMan from "@/public/assets/character-man.png";
+import characterWomen from "@/public/assets/character-women.png";
+import base from "@/public/assets/base.png";
 import { gsap } from "gsap";
 import { useEffect } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";

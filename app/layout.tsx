@@ -1,9 +1,12 @@
+// app/layout.tsx hoặc app/RootLayout.tsx tùy cấu trúc dự án của bạn
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ReactLenis } from "@/utils/lenis";
 import MarqueeBg from "./(decor)/MarqueeBg";
 import Header from "@/components/Header/header";
+import LoadingOverlay from "@/components/Loading/LoadingOverlay";
+import { LoadingProvider } from "@/providers/LoadingProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,9 +39,12 @@ export default function RootLayout({
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
-          <Header />
-          <MarqueeBg />
-          {children}
+          <LoadingProvider>
+            <LoadingOverlay />
+            <Header />
+            <MarqueeBg />
+            {children}
+          </LoadingProvider>
         </body>
       </ReactLenis>
     </html>

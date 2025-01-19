@@ -2,13 +2,16 @@
 import { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import team1 from "@/assets/team_1.png";
+import team1 from "@/public/assets/team_1.png";
 import Image from "next/image";
 import Marquee from "react-fast-marquee";
-import arrowPixel from "@/assets/arrowpixel.svg";
-import example1 from "@/assets/example1.png";
+import arrowPixel from "@/public/assets/arrowpixel.svg";
+import example1 from "@/public/assets/example1.png";
+import { useLoading } from "@/providers/LoadingProvider";
 
 const Intro = () => {
+  const { isLoading } = useLoading();
+
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     const introSec = document.getElementById("introSec");
@@ -34,14 +37,14 @@ const Intro = () => {
       textShowCase &&
       spanShowCase
     ) {
+      // gsap.to(textContainer, {
+      //   y: 0,
+      //   ease: "power1.out",
+      // });
+
       gsap.to(theStoryShowCaseItems, {
         opacity: 0,
         ease: "power1.in",
-      });
-
-      gsap.to(textContainer, {
-        y: "0em",
-        ease: "power1.inOut",
       });
 
       gsap.to(spanShowCase, {
@@ -58,16 +61,16 @@ const Intro = () => {
         },
       });
 
-      tl.to(textContainer, {
-        y: () => +(introSec.offsetHeight * 0.4), // Điều chỉnh tỷ lệ để kiểm soát tốc độ
-        ease: "none",
-        scrollTrigger: {
-          trigger: introSec,
-          start: "top top",
-          end: "bottom top",
-          scrub: true, // Liên kết animation với scroll
-        },
-      });
+      // tl.to(textContainer, {
+      //   y: () => +(introSec.offsetHeight * 0.4), // Điều chỉnh tỷ lệ để kiểm soát tốc độ
+      //   ease: "none",
+      //   scrollTrigger: {
+      //     trigger: introSec,
+      //     start: "top top",
+      //     end: "bottom top",
+      //     scrub: true, // Liên kết animation với scroll
+      //   },
+      // });
 
       tl.to(team1, {
         y: () => +(introSec.offsetHeight * 0.6), // Điều chỉnh tỷ lệ để kiểm soát tốc độ
@@ -141,14 +144,17 @@ const Intro = () => {
   return (
     <>
       <div id="introSec" className="relative">
-        <div id="text-container" className="relative z-[1]">
-          <h1 className="text-center uppercase text-[5vw] leading-[1em]">
+        <div
+          id="text-container"
+          className={`absolute z-[1] left-0 right-0 mx-auto translate3d_title transition-loading`}
+        >
+          <h1 className="text-center uppercase text-[5vw] leading-[1em] text-white w-fit mx-auto">
             Experience
           </h1>
-          <h1 className="text-center uppercase text-[5vw] leading-[1em]">
+          <h1 className="text-center uppercase text-[5vw] leading-[1em] text-[#f3e549] w-fit mx-auto">
             adventurous
           </h1>
-          <h1 className="text-center uppercase text-[5vw] leading-[1em]">
+          <h1 className="text-center uppercase text-[5vw] leading-[1em] gradient-text-title w-fit mx-auto">
             Journey
           </h1>
           <p className="text-center uppercase text-xl mt-4">

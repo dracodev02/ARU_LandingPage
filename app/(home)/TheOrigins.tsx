@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
-import example1 from "@/assets/example1.png";
+import example1 from "@/public/assets/example1.png";
 
 const TheOrigins = () => {
   useEffect(() => {
@@ -226,16 +226,16 @@ const TheOrigins = () => {
             height={1000}
           />
 
-          <Image
-            src={example1}
+          <img
+            src={example1.src}
             alt="example1"
             className="absolute w-full h-full group-hover:scale-[0.4] group-hover:rotate-[20deg] transition-all duration-700"
             width={1000}
             height={1000}
           />
 
-          <Image
-            src={example1}
+          <img
+            src={example1.src}
             alt="example1"
             className="w-full h-full"
             width={1000}

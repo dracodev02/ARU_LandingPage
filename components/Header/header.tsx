@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useEffect } from "react";
-import logoAru from "@/assets/logoAru.svg";
+import logoAru from "@/public/assets/logoAru.svg";
 import Image from "next/image";
 import { FaTelegram, FaXTwitter } from "react-icons/fa6";
 
@@ -24,7 +24,7 @@ const Header = () => {
       id="header"
       className="fixed top-[1em] w-full transition-all duration-500 z-10"
     >
-      <div className="w-[12em] absolute left-[1em]">
+      <div className="w-[12em] absolute left-[1em] text-white">
         <p>あるあるの世界</p>
         <p>
           <span className="block">Farm, Tame</span>
