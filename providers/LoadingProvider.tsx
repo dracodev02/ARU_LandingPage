@@ -16,6 +16,7 @@ const assets = [
   "/assets/arrowpixel.svg",
   "/assets/example1.png",
   "/assets/logoAru.svg",
+  "/assets/nft-demo.png",
   //   "/assets/BrandFootage1.mp4",
 ];
 
@@ -46,7 +47,9 @@ export const LoadingProvider: React.FC<{ children: ReactNode }> = ({
       if (isMounted) {
         setProgress(Math.round((loadedAssets / totalAssets) * 100));
         if (loadedAssets === totalAssets) {
-          setIsLoading(false);
+          setTimeout(() => {
+            setIsLoading(false);
+          }, 1000);
         }
       }
     };
@@ -66,7 +69,6 @@ export const LoadingProvider: React.FC<{ children: ReactNode }> = ({
         video.src = src;
         video.preload = "auto";
         video.onloadeddata = () => resolve();
-        console.log("loadVideo");
 
         video.onerror = () => resolve(); // Tiếp tục ngay cả khi có lỗi
       });

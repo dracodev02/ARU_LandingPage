@@ -4,6 +4,7 @@ import Game from "./(home)/Game";
 import Intro from "./(home)/Intro";
 import TheOrigins from "./(home)/TheOrigins";
 import { useEffect } from "react";
+import GetNFT from "./(home)/GetNFT";
 
 export default function Home() {
   const { isLoading } = useLoading();
@@ -18,17 +19,15 @@ export default function Home() {
       document
         .getElementById("loadingOverlay")
         ?.classList.add("loaded-clippath");
-      setTimeout(() => {}, 1000); // hoàn thành animation mới được scroll
     }
   }, [isLoading]);
 
   return (
     <div>
-      {/* <video src="/videos/BrandFootage1.mp4" autoPlay loop muted /> */}
       <Intro />
-      <TheOrigins />
       <Game />
-      {/* <div className="bg-red-400 h-[2000px] w-full"></div> */}
+      <TheOrigins />
+      <GetNFT />
     </div>
   );
 }

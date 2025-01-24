@@ -68,7 +68,7 @@ const Game = () => {
   });
 
   return (
-    <div className="relative">
+    <div className="relative pt-[2em]">
       <div className="w-full py-2 bg-[#34FF7B]">
         <Marquee className="uppercase">
           <div className="mx-6">
